@@ -36,6 +36,11 @@
         productVersion: "1.0",
       };
 
+        if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+            container.className = "unity-mobile";
+            config.devicePixelRatio = Math.min(config.devicePixelRatio, 2); // added
+        }
+
       const container = document.querySelector("#unity-container");
       const canvas = document.querySelector("#unity-canvas");
       const loadingCover = document.querySelector("#loading-cover");
